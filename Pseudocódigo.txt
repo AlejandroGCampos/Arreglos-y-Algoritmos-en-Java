@@ -1,0 +1,75 @@
+Algoritmo Clase5_MinimoMaximo
+	
+    Definir arr, mayor1, mayor2, menor1, menor2, actual Como Entero
+    Definir i, n Como Entero
+    
+    // Vector ya creado (inicia en posición 1)
+    n <- 7
+    Dimension arr[n]
+    
+    arr[1] <- 8
+    arr[2] <- 3
+    arr[3] <- 15
+    arr[4] <- 1
+    arr[5] <- 9
+    arr[6] <- 20
+    arr[7] <- 5
+    
+    Si n < 2 Entonces // Verificqdor de seguridad, ya sea si el arreglo es pequeño no hay segundos
+        Escribir "El arreglo debe tener al menos 2 elementos."
+    SiNo
+		
+        // Inicializa usando los primeros elementos asi evitando valores basura
+        Si arr[1] > arr[2] Entonces
+            mayor1 <- arr[1]
+            mayor2 <- arr[2]
+            menor1 <- arr[2]
+            menor2 <- arr[1]
+        Sino
+            mayor1 <- arr[2]
+            mayor2 <- arr[1]
+            menor1 <- arr[1]
+            menor2 <- arr[2]
+        FinSi
+		
+        // Usamos while variando la estructura
+        i <- 3
+        
+        Mientras i <= n Hacer
+            
+            actual <- arr[i]
+            
+            Si actual <> mayor1 Entonces // Lógica de comparación de extremos maximos
+                Si actual > mayor1 Entonces
+                    mayor2 <- mayor1
+                    mayor1 <- actual
+                Sino
+                    Si actual > mayor2 Entonces
+                        mayor2 <- actual
+                    FinSi
+                FinSi
+            FinSi
+            
+            Si actual <> menor1 Entonces // Lógica de comparación de extremos minimos
+                Si actual < menor1 Entonces
+                    menor2 <- menor1
+                    menor1 <- actual
+                Sino
+                    Si actual < menor2 Entonces
+                        menor2 <- actual
+                    FinSi
+                FinSi
+            FinSi
+            
+            i <- i + 1 // Incremento
+            
+        FinMientras
+		
+        // Salida de datos
+        Escribir ">>> Análisis de Arreglo <<<"
+        Escribir "Segundo valor más alto: ", mayor2
+        Escribir "Segundo valor más bajo: ", menor2
+        
+    FinSi
+	
+FinAlgoritmo

@@ -1,0 +1,43 @@
+--------------------|Explicación de Funcionamiento del Algoritmo:|
+
+El algoritmo funciona correctamente porque primero inicializa los valores máximos y mínimos usando los dos primeros elementos del arreglo, garantizando que no existan valores basura al iniciar las comparaciones.
+
+Luego, recorre el resto del arreglo una sola vez utilizando un ciclo Mientras. En cada iteración compara el valor actual con los máximos y mínimos ya encontrados, actualizando las variables cuando corresponde.
+
+De esta forma:
+
+mayor1 siempre guarda el valor más alto encontrado.
+
+mayor2 guarda el segundo valor más alto.
+
+menor1 guarda el valor más bajo.
+
+menor2 guarda el segundo valor más bajo.
+
+Como el arreglo se recorre completamente y las comparaciones se realizan de manera controlada, el algoritmo garantiza que al final se obtengan correctamente el segundo mayor y el segundo menor valor.
+
+Además, su complejidad es O(n), ya que solo recorre el arreglo una vez.
+
+--------------------|Análisis de Complejidad|
+
+---Tiempo (Notación O)
+La complejidad temporal del algoritmo es:
+	O(n)
+
+Porque el arreglo se recorre una sola vez después de la inicialización.
+El ciclo Mientras analiza cada elemento exactamente una vez, realizando comparaciones constantes en cada iteración.
+
+No existen ciclos anidados ni recorridos adicionales, por lo que el tiempo de ejecución crece proporcionalmente al tamaño del arreglo.
+
+---Espacio (Notación O)
+La complejidad espacial es:
+	O(1)
+
+Porque el algoritmo solo utiliza un número fijo de variables auxiliares:
+	- mayor1
+	- mayor2
+	- menor1
+	- menor2
+	- actual
+	- i
+No se crean arreglos adicionales ni estructuras dinámicas que dependan del tamaño n, por lo tanto el espacio utilizado es constante.
